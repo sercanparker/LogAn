@@ -10,7 +10,11 @@ namespace LogAn
 		public bool IsValidLogFileName(string fileName){
 
    
-			if (!fileName.EndsWith(".SLF"))
+			if (String.IsNullOrEmpty(fileName))
+			{
+				throw new ArgumentException("filename should not be empty or null.");
+			}
+			if (!fileName.EndsWith(".SLF",StringComparison.CurrentCultureIgnoreCase))
 			{
 				return false;
 			}
