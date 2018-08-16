@@ -58,6 +58,7 @@ namespace LogAn.UnitTests
 			var exception = Assert.Catch(() => analyzer.IsValidLogFileName(String.Empty));
 
 			StringAssert.Contains("filename should not be empty or null.", exception.Message);
+
             
 		}
     }
